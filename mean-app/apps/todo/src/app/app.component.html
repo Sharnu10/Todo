@@ -1,1 +1,9 @@
-<mean-app-nx-welcome></mean-app-nx-welcome>
+<!-- <mean-app-nx-welcome></mean-app-nx-welcome> -->
+<mean-app-header></mean-app-header>
+
+<main>
+  <mean-app-post-create
+    (postCreated)="onPostAdded($event)"
+  ></mean-app-post-create>
+  <mean-app-post-list [posts]="Storedposts"></mean-app-post-list>
+</main>
