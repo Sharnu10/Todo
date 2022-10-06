@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { PostService } from '../posts.service';
 
 @Component({
   selector: 'mean-app-post-create',
@@ -9,13 +10,9 @@ export class PostCreateComponent {
   textAreaValue =
     'Toutiao App - match with perffect information - recommendation algorithm';
   title = '';
-  @Output() postCreated = new EventEmitter();
+  constructor(public postService: PostService) {}
 
   onAddPost() {
-    const post = {
-      title: this.title,
-      content: this.textAreaValue,
-    };
-    this.postCreated.emit(post);
+    this.postService.addPost(this.title, this.textAreaValue);
   }
 }

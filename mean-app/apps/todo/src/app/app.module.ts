@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PostService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
