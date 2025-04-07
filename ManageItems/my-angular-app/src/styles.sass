@@ -1,28 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "style/variables.sass"
+@import "style/utility.sass"
 
-//Variables
-$zero: 0
-
-// box-modal
-app-root p 
-    margin: $zero
-
-// heading
-h1,h2,h3,h4,h5,h6
-    margin: 0
-
-h2
-    margin: 0
+* 
+  box-sizing: border-box
 
 body
   margin: 0
+  padding: 0
   font-family: Arial, sans-serif
-  background-color: #f8f9fa
-  height: 100rem
 
-// universal selector
-*
-    margin: 0
-    padding: 0
-    box-sizing: border-box
-    width: 100%
+main
+  padding: 0
+  width: 100%
+
+  /* Tablet styles */
+@media (min-width: 768px) 
+  .main 
+    @include main-styles(768px, blue)
+  
+
+/* Desktop styles */
+@media (min-width: 1024px) 
+  .main
+    @include main-styles(960px, red)
+  
+
+/* Larger desktop styles */
+@media (min-width: 1200px) 
+  .main 
+    @include main-styles(1140px, orange)
+  
